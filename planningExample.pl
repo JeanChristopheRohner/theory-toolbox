@@ -42,8 +42,7 @@ event(H, deduce, plan(START, ACTIONS, GOAL), time, X1) ⇐
 
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
-q1 ⇐	GOAL1 = event(somebody, deduce, plan(start, _, satisfied), time, X1)
-		∧ GOAL2 = event(somebody, deduce, plan(start, _, satisfied), time, X2)
+q1 ⇐	GOAL = event(somebody, deduce, plan(start, _, satisfied), time, _)
 		∧ INPUT = [
 			human(somebody),
 			event(somebody, represent, transition(start, openFridge, fridgeOpen), time, 1),
@@ -55,10 +54,8 @@ q1 ⇐	GOAL1 = event(somebody, deduce, plan(start, _, satisfied), time, X1)
 			event(somebody, represent, transition(haveGlass, pourBeverageInGlass, beverageInGlass), time, 1),
 			event(somebody, represent, transition(beverageInGlass, drinkBeverage, satisfied), time, 1)
 		]
-		∧ maxValue(X1, GOAL1, INPUT)
-		∧ showMaxValue(GOAL1, INPUT)
-		∧ minValue(X2, GOAL2, INPUT)
-		∧ showMinValue(GOAL2, INPUT).
+		∧ provable(GOAL, INPUT, RESULT)
+		∧ showProvable(RESULT) ∧ fail.
 
 q2 ⇐	GOAL1 = event(somebody, deduce, plan(inCopenhagen, _, inApartment), time, X1)
 		∧ GOAL2 = event(somebody, deduce, plan(inCopenhagen, _, inApartment), time, X2)
