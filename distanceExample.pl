@@ -44,31 +44,31 @@ event(H, deduce, relation(A, beyond, C), time, X1) ⇐
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐	GOAL = event(somebody, deduce, relation(_, beyond, _), time, _)
-		∧ INPUT = [
-			source(recursive),
-			human(somebody),
-			event(somebody, represent, relation(earth, beyond, venus), time, 1),
-			event(somebody, represent, relation(mars, beyond, earth), time, 1),
-			event(somebody, represent, relation(jupiter, beyond, mars), time, 1),
-			event(somebody, represent, relation(saturn, beyond, jupiter), time, 1),
-			event(somebody, represent, relation(uranus, beyond, saturn), time, 1),
-			event(somebody, represent, relation(neptune, beyond, uranus), time, 1),
-			event(somebody, represent, relation(pluto, beyond, neptune), time, 1)
-		]
-		∧ falsifiability(GOAL, INPUT, N)
-		∧ showFalsifiability(GOAL, INPUT, N).
+	∧ INPUT = [
+		source(recursive),
+		human(somebody),
+		event(somebody, represent, relation(earth, beyond, venus), time, 1),
+		event(somebody, represent, relation(mars, beyond, earth), time, 1),
+		event(somebody, represent, relation(jupiter, beyond, mars), time, 1),
+		event(somebody, represent, relation(saturn, beyond, jupiter), time, 1),
+		event(somebody, represent, relation(uranus, beyond, saturn), time, 1),
+		event(somebody, represent, relation(neptune, beyond, uranus), time, 1),
+		event(somebody, represent, relation(pluto, beyond, neptune), time, 1)
+	]
+	∧ falsifiability(GOAL, INPUT, N)
+	∧ showFalsifiability(GOAL, INPUT, N).
 
 q2 ⇐	GOAL = event(somebody, deduce, relation(_, beyond, _), time, _)
-		∧ INPUT = [
-			source(nonrecursive),
-			human(somebody),
-			event(somebody, represent, relation(earth, beyond, venus), time, 1),
-			event(somebody, represent, relation(mars, beyond, earth), time, 1),
-			event(somebody, represent, relation(jupiter, beyond, mars), time, 1),
-			event(somebody, represent, relation(saturn, beyond, jupiter), time, 1),
-			event(somebody, represent, relation(uranus, beyond, saturn), time, 1),
-			event(somebody, represent, relation(neptune, beyond, uranus), time, 1),
-			event(somebody, represent, relation(pluto, beyond, neptune), time, 1)
-		]
-		∧ falsifiability(GOAL, INPUT, N)
-		∧ showFalsifiability(GOAL, INPUT, N).
+	∧ INPUT = [
+		source(nonrecursive),
+		human(somebody),
+		event(somebody, represent, relation(earth, beyond, venus), time, 1),
+		event(somebody, represent, relation(mars, beyond, earth), time, 1),
+		event(somebody, represent, relation(jupiter, beyond, mars), time, 1),
+		event(somebody, represent, relation(saturn, beyond, jupiter), time, 1),
+		event(somebody, represent, relation(uranus, beyond, saturn), time, 1),
+		event(somebody, represent, relation(neptune, beyond, uranus), time, 1),
+		event(somebody, represent, relation(pluto, beyond, neptune), time, 1)
+	]
+	∧ falsifiability(GOAL, INPUT, N)
+	∧ showFalsifiability(GOAL, INPUT, N).

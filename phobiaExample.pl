@@ -5,8 +5,11 @@
 
 % DSM5 definition of simple phobia.
 
+
 % SOURCES
-% American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (DSM-5®). American Psychiatric Pub.
+
+% American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (DSM-5®). 
+% American Psychiatric Pub.
 
 
 % INPUT----------------------------------------------------------------------------------------------------------------
@@ -14,7 +17,7 @@
 % source(SO) 
 % human(H)
 % situation(S)
-% event(H, phobia, S, 1, X)     
+% event(H, phobia, S, 1, X)
 
 % SO = dsm5 ∨ SO = reasonableAssumption
 % H is an atom or number
@@ -70,26 +73,26 @@ event(H, encounter, S, T, X1) ⇐
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐	GOAL1 = event(S, V, O, T, X1)
-		∧ GOAL2 = event(S, V, O, T, X2)
-		∧ INPUT = [
-			source(dsm5), 
-			human(somebody), 
-			situation(spiders), 
-			event(somebody, phobia, spiders, 1, 1)
-		]
-		∧ THRESHOLD = 0.1
-		∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
-		∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.
+	∧ GOAL2 = event(S, V, O, T, X2)
+	∧ INPUT = [
+		source(dsm5), 
+		human(somebody), 
+		situation(spiders), 
+		event(somebody, phobia, spiders, 1, 1)
+	]
+	∧ THRESHOLD = 0.1
+	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
+	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.
 
 q2 ⇐	GOAL1 = event(S, V, O, T, X1)
-		∧ GOAL2 = event(S, V, O, T, X2)
-		∧ INPUT = [
-			source(dsm5), 
-			source(reasonableAssumption), 
-			human(somebody), 
-			situation(spiders), 
-			event(somebody, phobia, spiders, 1, 1)
-		]
-		∧ THRESHOLD = 0.1
-		∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
-		∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.
+	∧ GOAL2 = event(S, V, O, T, X2)
+	∧ INPUT = [
+		source(dsm5), 
+		source(reasonableAssumption), 
+		human(somebody), 
+		situation(spiders), 
+		event(somebody, phobia, spiders, 1, 1)
+	]
+	∧ THRESHOLD = 0.1
+	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
+	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.

@@ -32,6 +32,8 @@ goal_expansion(A ∨ B, (A; B)).
 % Usage examples:
 % aimaExample.pl 
 % collinsQuillianExample.pl
+% genealogyExample.pl
+% planningExample.pl
 % substanceAbuseExample.pl
 % substanceAbuseExample+.pl
 
@@ -88,9 +90,9 @@ showProof(P):- copy_term_nat(P, P1), numbervars(P1, 0, _, [attvar(bind)]), nl, w
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % MAXVALUE
 
-% maxValue(X, GOAL, INPUT). Find a proof for GOAL given INPUT such that the argument X in GOAL is as high as possible.
+% maxValue(X, GOAL, INPUT). Find GOAL given INPUT such that the argument X in GOAL is as high as possible.
 % X is the returned maximum value
-% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable, and where the argument X holds a numerical value.
+% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable, and  where the argument X holds a numerical value.
 % INPUT should be a list of zero or more compound terms.
 
 % showMaxValue(GOAL, INPUT). Prints the results obtained from maxValue(X, GOAL, INPUT) to the console.
@@ -120,7 +122,7 @@ showMaxValue(G, I):-
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % MINVALUE
 
-% minValue(X, GOAL, INPUT). Find a proof for GOAL given INPUT such that the argument X in GOAL is as low as possible.
+% minValue(X, GOAL, INPUT). Find GOAL given INPUT such that the argument X in GOAL is as low as possible.
 % X is the returned minimum value
 % GOAL should be a compound term where any argument can be a constant, variable or anonymous variable, and where the argument X holds a numerical value.
 % INPUT should be a list of zero or more compound terms.

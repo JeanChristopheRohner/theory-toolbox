@@ -213,22 +213,22 @@ event(M, harm, H, T1, X1) ⇐
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐ 	misuse(M)
-		∧ GOAL = event(M, harm, somebody, 6, _)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), 
-			referent(friend, somebody), 
-			event(somebody, perform, M, 1, 1)
-		]
-		∧ provable(GOAL, INPUT, RESULT)
-		∧ showProvable(RESULT) ∧ fail.
+	∧ GOAL = event(M, harm, somebody, 6, _)
+	∧ INPUT = [
+		source(_), 
+		human(somebody), 
+		referent(friend, somebody), 
+		event(somebody, perform, M, 1, 1)
+	]
+	∧ provable(GOAL, INPUT, RESULT)
+	∧ showProvable(RESULT) ∧ fail.
 
 q2 ⇐	GOAL = event(useHeroin, harm, somebody, 6, _)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), 
-			referent(friend, somebody), 
-			exogenousEvent(_, _, _, _, _)
-		]
-		∧ prove(GOAL, INPUT, PROOF)
-		∧ showProof(PROOF).
+	∧ INPUT = [
+		source(_), 
+		human(somebody), 
+		referent(friend, somebody), 
+		exogenousEvent(_, _, _, _, _)
+	]
+	∧ prove(GOAL, INPUT, PROOF)
+	∧ showProof(PROOF).

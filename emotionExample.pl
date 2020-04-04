@@ -3,12 +3,20 @@
 
 % NOTES----------------------------------------------------------------------------------------------------------------
 
-% An appraisal theory of emotion loosely based on Lazarus (1991), Smith and Ellsworth (1985), and Smith and Lazarus (1993).
+% An appraisal theory of emotion loosely based on Lazarus (1991), Smith and Ellsworth (1985), and 
+% Smith and Lazarus (1993).
+
 
 % SOURCES
-% Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theory of Emotion. American Psychologist, 46(8), 819-834.
-% Smith, C. & Ellsworth, P. (1985). Patterns of Cognitive Appraisal in Emotion. Journal of personality and social psychology. 48. 813-38.
-% Smith, C. A., & Lazarus, R. S. (1993). Appraisal components, core relational themes, and the emotions. Cognition & Emotion, 7(3-4), 233-269.
+
+% Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theory of Emotion. 
+% American Psychologist, 46(8), 819-834.
+
+% Smith, C. & Ellsworth, P. (1985). Patterns of Cognitive Appraisal in Emotion. Journal of 
+% personality and social psychology. 48. 813-38.
+
+% Smith, C. A., & Lazarus, R. S. (1993). Appraisal components, core relational themes, 
+% and the emotions. Cognition & Emotion, 7(3-4), 233-269.
 
 
 % INPUT----------------------------------------------------------------------------------------------------------------
@@ -115,28 +123,28 @@ event(H, experience, happiness, T1, X1) ⇐
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐	INPUT = [
-			human(somebody),
-			human(somebodyElse),
-			event(anEvent),
-			event(somebody, appraise, _, present, 0.1),
-			event(somebody, appraise, _, present, 0.5),
-			event(somebody, appraise, _, present, 0.9)
-		]
-		∧ (EMO = anger ∨ EMO = shame ∨ EMO = fear ∨ EMO = sadness ∨ EMO = happiness)
-		∧ GOAL = event(somebody, experience, EMO, present, X)
-		∧ maxValue(X, GOAL, INPUT)
-		∧ showMaxValue(GOAL, INPUT) ∧ fail.
+		human(somebody),
+		human(somebodyElse),
+		event(anEvent),
+		event(somebody, appraise, _, present, 0.1),
+		event(somebody, appraise, _, present, 0.5),
+		event(somebody, appraise, _, present, 0.9)
+	]
+	∧ (EMO = anger ∨ EMO = shame ∨ EMO = fear ∨ EMO = sadness ∨ EMO = happiness)
+	∧ GOAL = event(somebody, experience, EMO, present, X)
+	∧ maxValue(X, GOAL, INPUT)
+	∧ showMaxValue(GOAL, INPUT) ∧ fail.
 
 q2 ⇐	GOAL = event(h1, experience, _, present, _)
-		∧ INPUT = [
-			human(h1),
-			human(h2),
-			event(jobLoss),
-			event(h1, appraise, event(h1, experience, jobLoss, past, 1), present, 1),
-			event(h1, appraise, event(jobLoss, congruent, achievement, past, 1), present, 0),
-			event(h1, appraise, event(h1, cause, jobLoss, past, 1), present, 0.9),
-			event(h1, appraise, event(h2, cause, jobLoss, past, 1), present, 0.1),
-			event(h1, appraise, event(world, cause, jobLoss, past, 1), present, 0.1)
-		]
-		∧ prove(GOAL, INPUT, PROOF)
-		∧ showProof(PROOF) ∧ fail.
+	∧ INPUT = [
+		human(h1),
+		human(h2),
+		event(jobLoss),
+		event(h1, appraise, event(h1, experience, jobLoss, past, 1), present, 1),
+		event(h1, appraise, event(jobLoss, congruent, achievement, past, 1), present, 0),
+		event(h1, appraise, event(h1, cause, jobLoss, past, 1), present, 0.9),
+		event(h1, appraise, event(h2, cause, jobLoss, past, 1), present, 0.1),
+		event(h1, appraise, event(world, cause, jobLoss, past, 1), present, 0.1)
+	]
+	∧ prove(GOAL, INPUT, PROOF)
+	∧ showProof(PROOF) ∧ fail.

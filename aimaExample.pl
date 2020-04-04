@@ -3,10 +3,13 @@
 
 % NOTES----------------------------------------------------------------------------------------------------------------
 
-% Classic example from Russel and Norvig (2010, page 297) with some additions.
+% Classic example from Russel and Norvig (2010, p 297) with some additions.
+
 
 % SOURCES
-% Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial Intelligence : A Modern Approach (3rd ed.). Upper Saddle River: Prentice Hall. 
+
+% Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial Intelligence : A Modern Approach (3rd ed.). 
+% Upper Saddle River: Prentice Hall. 
 
 
 % INPUT----------------------------------------------------------------------------------------------------------------
@@ -34,11 +37,11 @@ criminal(X) ⇐ american(X) ∧ weapon(Y) ∧ sells(X, Y, Z) ∧ hostile(Z).
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐	GOAL = criminal(_) 
-		∧ INPUT = [] 
-		∧ provable(GOAL, INPUT, RESULT) 
-		∧ showProvable(RESULT) ∧ fail.
+	∧ INPUT = [] 
+	∧ provable(GOAL, INPUT, RESULT) 
+	∧ showProvable(RESULT) ∧ fail.
 
 q2 ⇐	GOAL = criminal(_) 
-		∧ INPUT = [] 
-		∧ prove(GOAL, INPUT, PROOF) 
-		∧ showProof(PROOF) ∧ fail.
+	∧ INPUT = [] 
+	∧ prove(GOAL, INPUT, PROOF) 
+	∧ showProof(PROOF) ∧ fail.

@@ -8,8 +8,8 @@
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 
-% female(A)    
-% male(B)    
+% female(A)
+% male(B)
 % parent(C, D)
 
 % A is an atom or number
@@ -31,33 +31,33 @@ cousin(C1, C2) ⇐ parent(G, P1) ∧ parent(G, P2) ∧ parent(P1, C1) ∧ parent
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
 q1 ⇐	GOAL = uncle(_, _)
-		∧ INPUT = [
-			parent(mona, homer),
-			parent(mona, herb),
-			parent(homer, bart),
-			parent(homer, lisa),
-			male(herb)
-		],
-		provable(GOAL, INPUT, RESULT)
-		∧ showProvable(RESULT) ∧ fail.
+	∧ INPUT = [
+		parent(mona, homer),
+		parent(mona, herb),
+		parent(homer, bart),
+		parent(homer, lisa),
+		male(herb)
+	],
+	provable(GOAL, INPUT, RESULT)
+	∧ showProvable(RESULT) ∧ fail.
 
 q2 ⇐	GOAL = aunt(_, _)
-		∧ INPUT = [
-			female(patty),
-			parent(jaqueline, patty),
-			parent(jaqueline, marge),
-			parent(marge, bart),
-			parent(marge, lisa)
-		]
-		∧ prove(GOAL, INPUT, PROOF)
-		∧ showProof(PROOF) ∧ fail.
+	∧ INPUT = [
+		female(patty),
+		parent(jaqueline, patty),
+		parent(jaqueline, marge),
+		parent(marge, bart),
+		parent(marge, lisa)
+	]
+	∧ prove(GOAL, INPUT, PROOF)
+	∧ showProof(PROOF) ∧ fail.
 
 q3 ⇐	GOAL = cousin(_, _)
-		∧ INPUT = [
-			parent(jaqueline, marge),
-			parent(jaqueline, patty),
-			parent(marge, maggie),
-			parent(patty, ling)
-		]
-		∧ prove(GOAL, INPUT, PROOF)
-		∧ showProof(PROOF) ∧ fail.
+	∧ INPUT = [
+		parent(jaqueline, marge),
+		parent(jaqueline, patty),
+		parent(marge, maggie),
+		parent(patty, ling)
+	]
+	∧ prove(GOAL, INPUT, PROOF)
+	∧ showProof(PROOF) ∧ fail.

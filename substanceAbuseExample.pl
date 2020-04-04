@@ -3,18 +3,32 @@
 
 % NOTES----------------------------------------------------------------------------------------------------------------
 
-% The theory below is loosely based on the work of Ajzen (1991), Bandura(2004), Nutt et al (2007), Skinner (1953), and Walters and Rotgers (2011).
-% Pleasure values and harm values for different substances were obtained by dividing the expert ratings in  Nutt et al (2007, Table 3) by 3 to standardize values to the 0-1 range.
-% Note that only relative comparisons between probabilities are meaningful, since the works on which the theory is based are not that detailed about various background assumptions
-% that impact different parameter values (e.g. how long does one have to use heroin to get a harm value of 3, etc). Relative comparisons between probabilities should however be meaningful.
-% Physical harm does not appear as an outcome in the operant learning clause because physical harm is not something which produces immediate displeasure (i.e. not a reinforcer).
-% For the sake of clarity the theory also uses a simple representation of the relation between substance misuse and physical harm: It does not increment harm as a function of the number of misuse episodes. Harm values should insted be interpreted as the harm that results from one misuse episode.
+% The theory below is loosely based on the work of Ajzen (1991), Bandura(2004), Nutt et al (2007), Skinner (1953), 
+% and Walters and Rotgers (2011). Pleasure values and harm values for different substances were obtained by dividing 
+% the expert ratings in  Nutt et al (2007, Table 3) by 3 to standardize values to the 0-1 range. Note that only 
+% relative comparisons between probabilities are meaningful, since the works on which the theory is based are not that 
+% detailed about various background assumptions that impact different parameter values (e.g. how long does one have 
+% to use heroin to get a harm value of 3, etc). Relative comparisons between probabilities should however be meaningful.
+% Physical harm does not appear as an outcome in the operant learning clause because physical harm is not something 
+% which produces immediate displeasure (i.e. not a reinforcer). For the sake of clarity the theory also uses a simple 
+% representation of the relation between substance misuse and physical harm: It does not increment harm as a function 
+% of the number of misuse episodes. Harm values should insted be interpreted as the harm that results from one misuse 
+% episode.
+
 
 % SOURCES
-% Ajzen, I. (1991). The theory of planned behavior. Organizational behavior and human decision processes, 50(2), 179-211. 
-% Nutt, D., King, L., Saulsbury, W., & Blakemore, C. (2007). Development of a rational scale to assess the harm of drugs of potential misuse. Lancet, 369, 1047-1053.
+
+% Ajzen, I. (1991). The theory of planned behavior. Organizational behavior and human decision 
+% processes, 50(2), 179-211. 
+
+% Nutt, D., King, L., Saulsbury, W., & Blakemore, C. (2007). Development of a rational scale to assess the harm of 
+% drugs of potential misuse. Lancet, 369, 1047-1053.
+
 % Skinner, B. F. (1953). Science and human behavior: Simon and Schuster.
-% Bandura, A. (2004). Observational Learning. In J. H. Byrne (Ed.), Learning and Memory (2nd ed. ed., pp. 482-484). New York, NY: Macmillan Reference USA.
+
+% Bandura, A. (2004). Observational Learning. In J. H. Byrne (Ed.), Learning and Memory (2nd ed. ed., pp. 482-484). 
+% New York, NY: Macmillan Reference USA.
+
 % Walters, S. T., & Rotgers, F. (Eds.). (2011). Treating substance abuse: Theory and technique. Guilford Press.
 
 
@@ -220,69 +234,69 @@ q1 ⇐	GOAL = event(_, _, _, _, _)
 	∧ showProvable(RESULT) ∧ fail.
 
 q2 ⇐ 	GOAL = event(somebody, experience, physicalHarm, 6, _)
-		∧ misuse(MISUSE)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), 
-			referent(friend, somebody), 
-			event(somebody, perform, MISUSE, 1, 1)
-		]
-		∧ provable(GOAL, INPUT, RESULT)
-		∧ write(MISUSE) ∧ write(': ') ∧ showProvable(RESULT) ∧ fail.
+	∧ misuse(MISUSE)
+	∧ INPUT = [
+		source(_), 
+		human(somebody), 
+		referent(friend, somebody), 
+		event(somebody, perform, MISUSE, 1, 1)
+	]
+	∧ provable(GOAL, INPUT, RESULT)
+	∧ write(MISUSE) ∧ write(': ') ∧ showProvable(RESULT) ∧ fail.
 
 
 % PROVE
 
 q3 ⇐  	GOAL = event(somebody, perform, useTobacco, 6, _)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), human(friend),
-			referent(friend, somebody), referent(somebody, friend),
-			exogenousEvent(_, _, _, _, _)
-		]
-		∧ prove(GOAL, INPUT, PROOF)
-		∧ showProof(PROOF).
+	∧ INPUT = [
+		source(_), 
+		human(somebody), human(friend),
+		referent(friend, somebody), referent(somebody, friend),
+		exogenousEvent(_, _, _, _, _)
+	]
+	∧ prove(GOAL, INPUT, PROOF)
+	∧ showProof(PROOF).
 
 
 % MAXVALUE
 
 q4 ⇐ 	GOAL = event(somebody, experience, physicalHarm, _, X)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), 
-			referent(friend, somebody),
-			exogenousEvent(_, _, _, _, 0.1),
-			exogenousEvent(_, _, _, _, 0.5),
-			exogenousEvent(_, _, _, _, 0.9)
-		]
-		∧ maxValue(X, GOAL, INPUT)
-		∧ showMaxValue(GOAL, INPUT).
+	∧ INPUT = [
+		source(_), 
+		human(somebody), 
+		referent(friend, somebody),
+		exogenousEvent(_, _, _, _, 0.1),
+		exogenousEvent(_, _, _, _, 0.5),
+		exogenousEvent(_, _, _, _, 0.9)
+	]
+	∧ maxValue(X, GOAL, INPUT)
+	∧ showMaxValue(GOAL, INPUT).
 
 q5 ⇐ 	GOAL = event(somebody, perform, eatUnhealthy, 6, X)
-		∧ INPUT = [
-			source(_),
-			misuse(eatUnhealthy),
-			causes(eatUnhealthy, pleasure, 0.9),
-			human(somebody), human(friend),
-			referent(friend, somebody), referent(somebody, friend),
-			exogenousEvent(_, _, _, _, 0.1),
-			exogenousEvent(_, _, _, _, 0.5),
-			exogenousEvent(_, _, _, _, 0.9)
-		]
-		∧ maxValue(X, GOAL, INPUT)
-		∧ showMaxValue(GOAL, INPUT).
+	∧ INPUT = [
+		source(_),
+		misuse(eatUnhealthy),
+		causes(eatUnhealthy, pleasure, 0.9),
+		human(somebody), human(friend),
+		referent(friend, somebody), referent(somebody, friend),
+		exogenousEvent(_, _, _, _, 0.1),
+		exogenousEvent(_, _, _, _, 0.5),
+		exogenousEvent(_, _, _, _, 0.9)
+	]
+	∧ maxValue(X, GOAL, INPUT)
+	∧ showMaxValue(GOAL, INPUT).
 
 
 % MINVALUE
 
 q6 ⇐ 	GOAL = event(somebody, experience, physicalHarm, 6, X)
-		∧ INPUT = [
-			source(_), 
-			human(somebody), 
-			referent(friend, somebody), 
-			event(somebody, perform, _, 1, 0.1),
-			event(somebody, perform, _, 1, 0.5),
-			event(somebody, perform, _, 1, 0.9)
-		]
-		∧ minValue(X, GOAL, INPUT)
-		∧ showMinValue(GOAL, INPUT).
+	∧ INPUT = [
+		source(_), 
+		human(somebody), 
+		referent(friend, somebody), 
+		event(somebody, perform, _, 1, 0.1),
+		event(somebody, perform, _, 1, 0.5),
+		event(somebody, perform, _, 1, 0.9)
+	]
+	∧ minValue(X, GOAL, INPUT)
+	∧ showMinValue(GOAL, INPUT).

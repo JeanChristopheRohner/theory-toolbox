@@ -17,3 +17,4 @@ event(H, perform, B, T1, X1) ⇐
 	∧ event(H, like, B, T2, X2)
 	∧ {X1 = 0.7 * X2}
 	∧ precedes(T2, T1).
+
