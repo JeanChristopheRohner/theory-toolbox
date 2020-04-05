@@ -9,11 +9,11 @@
 % relative comparisons between probabilities are meaningful, since the works on which the theory is based are not that 
 % detailed about various background assumptions that impact different parameter values (e.g. how long does one have 
 % to use heroin to get a harm value of 3, etc). Relative comparisons between probabilities should however be meaningful.
-% Physical harm does not appear as an outcome in the operant learning clause because physical harm is not something 
-% which produces immediate displeasure (i.e. not a reinforcer). For the sake of clarity the theory also uses a simple 
+% Physical harm does not appear as an outcome in the operant learning clause because physical harm does not produce 
+% immediate displeasure (i.e. not a reinforcer). For the sake of clarity the theory also uses a simple 
 % representation of the relation between substance misuse and physical harm: It does not increment harm as a function 
 % of the number of misuse episodes. Harm values should insted be interpreted as the harm that results from one misuse 
-% episode.
+% episode. The file substanceAbuseExample+.pl contains a more advanced state representation of harm.
 
 
 % SOURCES

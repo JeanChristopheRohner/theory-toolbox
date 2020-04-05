@@ -4,10 +4,10 @@
 % NOTES----------------------------------------------------------------------------------------------------------------
 
 % A recursive theory about how people make plans by connecting actions between 
-% sequences of state transitions to find a goal.
-% The theory uses a very basic (unary) state representation for the sake of clarity.
-% More complex state representations are possible by having multiple arguments for each
-% state (e.g. both if one has a beverage and if one has a container for the beverage).
+% sequences of state transitions to find a goal. The theory uses a very basic (unary) 
+% state representation for the sake of clarity. More complex state representations are 
+% possible by having multiple arguments for each state (e.g. both if one has a beverage 
+% and if one has a container for the beverage).
 
 
 % INPUT----------------------------------------------------------------------------------------------------------------
