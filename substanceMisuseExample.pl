@@ -118,7 +118,7 @@ event(H, represent, event(H, control, M, T1, 1), T1, X1) ⇐
 	∧ misuse(M)
 	∧ precedes(T2, T1)
 	∧ exogenousEvent(H, represent, event(environment, afford, M, T2, 1), T2, X2)
-	∧ exogenousEvent(H, represent, event(H, influence, environment, T2, 1), T2, X3)
+	∧ exogenousEvent(H, represent, event(H, affect, environment, T2, 1), T2, X3)
 	∧ {X1 = X2 * X3}.
 
 % Theory of planned behavior: Norm beliefs and perceived norms

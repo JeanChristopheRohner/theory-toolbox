@@ -38,12 +38,13 @@ time(3).
 
 precedes(X, Y) ⇐ time(X) ∧ time(Y) ∧ {Y = X + 1}.
 
-event(H1, influences, H2, T, 0.8) ⇐
+friendsSymmetric(X, Y) ⇐ friends(X, Y) ∨ friends(Y, X).
+
+event(H1, influences, H2, T, 0.6) ⇐
 	human(H1)
 	∧ human(H2)
-	∧ ¬(H1 = H2)
 	∧ time(T)
-	∧ (friends(H1, H2) ∨ friends(H2, H1)).
+	∧ friendsSymmetric(H1, H2).
 
 event(H1, does, smoke, T1, X1) ⇐
 	human(H1)
@@ -62,7 +63,7 @@ event(H, has, cancer, T1, X1) ⇐
 
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
-q1 ⇐	GOAL = event(somebody, has, cancer, _, _)
+q1 ⇐	GOAL = event(_, has, cancer, _, _)
 	∧ INPUT = [
 		human(somebody), human(somebodyElse), 
 		friends(somebodyElse, somebody), 
