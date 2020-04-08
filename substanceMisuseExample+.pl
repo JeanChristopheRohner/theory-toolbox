@@ -1,9 +1,8 @@
 ﻿:-include('theoryToolbox.pl').
 
-
 % NOTES----------------------------------------------------------------------------------------------------------------
 
-% Same as substanceAbuseExample.pl except that physical harm is propagated across time frames.
+% Exactly like substanceMisuse.pl except that physical harm is propagated across time.
 
 
 % INPUT----------------------------------------------------------------------------------------------------------------
@@ -40,28 +39,6 @@ positive(pleasure).
 negative(physicalHarm).
 reinforcer(pleasure).
 
-causes(useHeroin, physicalHarm, 0.93).
-causes(useCocaine, physicalHarm, 0.78).
-causes(useAlchohol, physicalHarm, 0.47).
-causes(useBenzodiazepines, physicalHarm, 0.54).
-causes(useAmphetamine, physicalHarm, 0.60).
-causes(useTobacco, physicalHarm, 0.41).
-causes(useCannabis, physicalHarm, 0.33).
-causes(useLSD, physicalHarm, 0.38).
-causes(useEcstasy, physicalHarm, 0.35).
-causes(useStreetMethadone, physicalHarm, 0.62).
-
-causes(useHeroin, pleasure, 1.00).
-causes(useCocaine, pleasure, 1.00).
-causes(useAlchohol, pleasure, 0.77).
-causes(useBenzodiazepines, pleasure, 0.57).
-causes(useAmphetamine, pleasure, 0.67).
-causes(useTobacco, pleasure, 0.77).
-causes(useCannabis, pleasure, 0.63).
-causes(useLSD, pleasure, 0.73).
-causes(useEcstasy, pleasure, 0.50).
-causes(useStreetMethadone, pleasure, 0.60).
-
 time(1).
 time(2).
 time(3).
@@ -71,6 +48,28 @@ time(6).
 
 precedes(X, Y) ⇐ time(X) ∧ time(Y) ∧ {Y = X + 1}.
 
+event(useHeroin, cause, physicalHarm, T, 0.93) ⇐ time(T).
+event(useCocaine, cause, physicalHarm, T, 0.78) ⇐ time(T).
+event(useAlchohol, cause, physicalHarm, T, 0.47) ⇐ time(T).
+event(useBenzodiazepines, cause, physicalHarm, T, 0.54) ⇐ time(T).
+event(useAmphetamine, cause, physicalHarm, T, 0.60) ⇐ time(T).
+event(useTobacco, cause, physicalHarm, T, 0.41) ⇐ time(T).
+event(useCannabis, cause, physicalHarm, T, 0.33) ⇐ time(T).
+event(useLSD, cause, physicalHarm, T, 0.38) ⇐ time(T).
+event(useEcstasy, cause, physicalHarm, T, 0.35) ⇐ time(T).
+event(useStreetMethadone, cause, physicalHarm, T, 0.62) ⇐ time(T).
+
+event(useHeroin, cause, pleasure, T, 1.00) ⇐ time(T).
+event(useCocaine, cause, pleasure, T, 1.00) ⇐ time(T).
+event(useAlchohol, cause, pleasure, T, 0.77) ⇐ time(T).
+event(useBenzodiazepines, cause, pleasure, T, 0.57) ⇐ time(T).
+event(useAmphetamine, cause, pleasure, T, 0.67) ⇐ time(T).
+event(useTobacco, cause, pleasure, T, 0.77) ⇐ time(T).
+event(useCannabis, cause, pleasure, T, 0.63) ⇐ time(T).
+event(useLSD, cause, pleasure, T, 0.73) ⇐ time(T).
+event(useEcstasy, cause, pleasure, T, 0.50) ⇐ time(T).
+event(useStreetMethadone, cause, pleasure, T, 0.60) ⇐ time(T).
+
 
 % CORE RELATIONS
 
@@ -79,24 +78,12 @@ event(H, represent, event(H, like, M, T1, 1), T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
 	∧ misuse(M)
-	∧ outcome(O)
-	∧ positive(O)
+	∧ outcome(PO) ∧ outcome(NO)
+	∧ positive(PO) ∧ negative(NO)
 	∧ precedes(T2, T1)
-	∧ exogenousEvent(H, represent, event(M, cause, O, T2, 1), T2, X2)
-	∧ exogenousEvent(H, represent, event(H, value, O, T2, 1), T2, X3)
-	∧ {X1 = X2 * X3}.
-
-% Theory of planned behavior: Expectancy-value beliefs and attitudes
-event(H, represent, event(H, like, M, T1, 1), T1, X1) ⇐
-	source(theoryOfPlannedBehavior)
-	∧ human(H)
-	∧ misuse(M)
-	∧ outcome(O)
-	∧ negative(O)
-	∧ precedes(T2, T1)
-	∧ exogenousEvent(H, represent, event(M, cause, O, T2, 1), T2, X2)
-	∧ exogenousEvent(H, represent, event(H, dislike, O, T2, 1), T2, X3)
-	∧ {X1 = 1 - X2 * X3}.
+    ∧ exogenousEvent(H, represent, event(M, cause, PO, T2, 1), T2, X2)
+    ∧ exogenousEvent(H, represent, event(M, cause, NO, T2, 1), T2, X3)
+	∧ {X1 = X2 * (1 - X3)}.
 
 % Theory of planned behavior: Control beliefs and perceived control
 event(H, represent, event(H, control, M, T1, 1), T1, X1) ⇐
@@ -148,7 +135,7 @@ event(H, perform, M, T1, X1) ⇐
 	∧ positive(O)
 	∧ reinforcer(O)
 	∧ precedes(T2, T1)
-	∧ causes(M, O, X2)
+	∧ event(M, cause, O, T2, X2)
 	∧ event(H, perform, M, T2, X3)
 	∧ {X1 = X2 * X3}.
 
@@ -159,35 +146,21 @@ event(H, perform, M, T1, X1) ⇐
 	∧ misuse(M)
 	∧ referent(R, H)
 	∧ outcome(O)
-	∧ positive(O)
+    ∧ positive(O)
+    ∧ reinforcer(O)
 	∧ precedes(T2, T1)
-	∧ causes(M, O, X2)
+    ∧ event(M, cause, O, T2, X2)
 	∧ event(R, perform, M, T2, X3)
 	∧ exogenousEvent(H, attend, R, T2, X4)
 	∧ exogenousEvent(H, capable, M, T2, X5)
 	∧ {X1 = X2 * X3 * X4 * X5}.
 
-% Vicarious learning: Punishment
-event(H, perform, M, T1, X1) ⇐
-	source(vicariousLearning)
-	∧ human(H)
-	∧ misuse(M)
-	∧ referent(R, H)
-	∧ outcome(O)
-	∧ negative(O)
-	∧ precedes(T2, T1)
-	∧ causes(M, O, X2)
-	∧ event(R, perform, M, T2, X3)
-	∧ exogenousEvent(H, attend, R, T2, X4)
-	∧ exogenousEvent(H, capable, M, T2, X5)
-	∧ {X1 = 1 - X2 * X3 * X4 * X5}.
-
-% Physical harm: Base case; at time 1 there is 0 harm from M
+% Physical harm from M is zero at in time frame 1
 event(M, harm, H, 1, 0) ⇐
 	human(H)
 	∧ misuse(M).
 
-% Physical harm: Performing M adds to previous harm weighted with the harmfulness of M
+% Performing M adds to previous harm weighted with the harmfulness of M
 % and the constant 0.25 for a gradual increase. Harm asymptotically reaches 1.
 event(M, harm, H, T1, X1) ⇐
 	source(harmBehavior)
@@ -195,7 +168,7 @@ event(M, harm, H, T1, X1) ⇐
 	∧ misuse(M)
 	∧ precedes(T2, T1)
 	∧ event(M, harm, H, T2, X2)
-	∧ causes(M, physicalHarm, X3)
+	∧ event(M, cause, physicalHarm, T2, X3)
 	∧ event(H, perform, M, T2, X4)
 	∧ {X1 = X2 + (1 - X2) * X3 * X4 * 0.25}.
 

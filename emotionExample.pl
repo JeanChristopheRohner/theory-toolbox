@@ -136,15 +136,14 @@ q1 ⇐	INPUT = [
 	∧ showMaxValue(GOAL, INPUT) ∧ fail.
 
 q2 ⇐	GOAL = event(h1, experience, _, present, _)
+	∧ (T = past ∨ T = future)
 	∧ INPUT = [
-		human(h1),
-		human(h2),
+		human(h1), human(h2),
 		event(jobLoss),
-		event(h1, appraise, event(h1, experience, jobLoss, past, 1), present, 1),
-		event(h1, appraise, event(jobLoss, congruent, achievement, past, 1), present, 0),
-		event(h1, appraise, event(h1, cause, jobLoss, past, 1), present, 0.9),
-		event(h1, appraise, event(h2, cause, jobLoss, past, 1), present, 0.1),
-		event(h1, appraise, event(world, cause, jobLoss, past, 1), present, 0.1)
+		event(h1, appraise, event(h1, experience, jobLoss, T, 1), present, 0.9),
+		event(h1, appraise, event(jobLoss, congruent, achievement, T, 1), present, 0.1),
+		event(h1, appraise, event(h1, cause, jobLoss, T, 1), present, 0.9),
+		event(h1, appraise, event(h2, cause, jobLoss, T, 1), present, 0.1),
+		event(h1, appraise, event(world, cause, jobLoss, T, 1), present, 0.1)
 	]
-	∧ prove(GOAL, INPUT, PROOF)
-	∧ showProof(PROOF) ∧ fail.
+	∧ prove(GOAL, INPUT, PROOF) ∧ showProof(PROOF) ∧ fail.
