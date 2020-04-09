@@ -99,7 +99,7 @@ event(useStreetMethadone, cause, pleasure, T, 0.60) ⇐ time(T).
 
 % CORE RELATIONS
 
-% Theory of planned behavior: Expectancy-value beliefs and attitudes
+% 1 Theory of planned behavior: Expectancy-value beliefs and attitudes
 event(H, represent, event(H, like, M, T1, 1), T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
@@ -111,7 +111,7 @@ event(H, represent, event(H, like, M, T1, 1), T1, X1) ⇐
     ∧ exogenousEvent(H, represent, event(M, cause, NO, T2, 1), T2, X3)
 	∧ {X1 = X2 * (1 - X3)}.
 
-% Theory of planned behavior: Control beliefs and perceived control
+% 2 Theory of planned behavior: Control beliefs and perceived control
 event(H, represent, event(H, control, M, T1, 1), T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
@@ -121,7 +121,7 @@ event(H, represent, event(H, control, M, T1, 1), T1, X1) ⇐
 	∧ exogenousEvent(H, represent, event(H, affect, environment, T2, 1), T2, X3)
 	∧ {X1 = X2 * X3}.
 
-% Theory of planned behavior: Norm beliefs and perceived norms
+% 3 Theory of planned behavior: Norm beliefs and perceived norms
 event(H, represent, event(H, should, M, T1, 1), T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
@@ -132,7 +132,7 @@ event(H, represent, event(H, should, M, T1, 1), T1, X1) ⇐
 	∧ exogenousEvent(H, represent, event(H, comply, R, T2, 1), T2, X3)
 	∧ {X1 = X2 * X3}.
 
-% Theory of planned behavior: Attitude, control, norm and intention
+% 4 Theory of planned behavior: Attitude, control, norm and intention
 event(H, represent, event(H, intend, M, T1, 1), T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
@@ -143,7 +143,7 @@ event(H, represent, event(H, intend, M, T1, 1), T1, X1) ⇐
 	∧ event(H, represent, event(H, should, M, T2, 1), T2, X4)
 	∧ {X1 = X2 * X3 * X4}.
 
-% Theory of planned behavior: Intention and behavior
+% 5 Theory of planned behavior: Intention and behavior
 event(H, perform, M, T1, X1) ⇐
 	source(theoryOfPlannedBehavior)
 	∧ human(H)
@@ -152,7 +152,7 @@ event(H, perform, M, T1, X1) ⇐
 	∧ event(H, represent, event(H, intend, M, T2, 1), T2, X2)
 	∧ {X1 = X2}.
 
-% Operant learning: Positive reinforcement
+% 6 Operant learning: Positive reinforcement
 event(H, perform, M, T1, X1) ⇐
 	source(operantLearning)
 	∧ human(H)
@@ -165,23 +165,23 @@ event(H, perform, M, T1, X1) ⇐
 	∧ event(H, perform, M, T2, X3)
 	∧ {X1 = X2 * X3}.
 
-% Vicarious learning: Positive reinforcement
+% 7 Vicarious learning: Positive reinforcement
 event(H, perform, M, T1, X1) ⇐
 	source(vicariousLearning)
 	∧ human(H)
 	∧ misuse(M)
 	∧ referent(R, H)
 	∧ outcome(O)
-    ∧ positive(O)
-    ∧ reinforcer(O)
+	∧ positive(O)
+	∧ reinforcer(O)
 	∧ precedes(T2, T1)
-    ∧ event(M, cause, O, T2, X2)
+	∧ event(M, cause, O, T2, X2)
 	∧ event(R, perform, M, T2, X3)
 	∧ exogenousEvent(H, attend, R, T2, X4)
 	∧ exogenousEvent(H, capable, M, T2, X5)
 	∧ {X1 = X2 * X3 * X4 * X5}.
 
-% Misuse behavior and physical harm
+% 8 Misuse behavior and physical harm
 event(H, experience, physicalHarm, T1, X1) ⇐
 	source(harmBehavior)
 	∧ human(H)
