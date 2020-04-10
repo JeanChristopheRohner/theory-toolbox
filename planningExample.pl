@@ -26,12 +26,14 @@
 
 % CORE RELATIONS
 
+% 1 Base case
 event(H, deduce, plan(START, ACTIONS, GOAL), time, X1) ⇐
 	human(H)
 	∧ event(H, represent, transition(START, ACTION, GOAL), time, X2)
 	∧ ACTIONS = ACTION
 	∧ {X1 = 1.0 * X2}.
 
+% 2 Recursive clause
 event(H, deduce, plan(START, ACTIONS, GOAL), time, X1) ⇐
 	human(H)
 	∧ event(H, represent, transition(START, ACTION, INTERIMGOAL), time, X2)

@@ -21,13 +21,15 @@
 
 % THEORY---------------------------------------------------------------------------------------------------------------
 
+% CORE RELATIONS
+
 % 1 Base case
 event(H, deduce, relation(A, beyond, B), time, X1) ⇐
 	human(H)
 	∧ event(H, represent, relation(A, beyond, B), time, X2)
 	∧ {X1 = 1 * X2}.
 
-% 2 Recursive
+% 2 Recursive clause
 event(H, deduce, relation(A, beyond, C), time, X1) ⇐
 	source(recursive)
 	∧ human(H)
@@ -35,7 +37,7 @@ event(H, deduce, relation(A, beyond, C), time, X1) ⇐
 	∧ event(H, deduce, relation(B, beyond, C), time, X3)
 	∧ {X1 = 0.8 * X2 * X3}.
 
-% 3 Non-recursive
+% 3 Non-recursive clause
 event(H, deduce, relation(A, beyond, C), time, X1) ⇐
 	source(nonrecursive)
 	∧ human(H)
