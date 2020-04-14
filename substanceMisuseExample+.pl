@@ -155,7 +155,7 @@ event(H, perform, M, T1, X1) ⇐
 	∧ exogenousEvent(H, capable, M, T2, X5)
 	∧ {X1 = X2 * X3 * X4 * X5}.
 
-% 8 Physical harm from M is zero at in time frame 1
+% 8 Physical harm from M is zero in time frame 1
 event(M, harm, H, 1, 0) ⇐
 	human(H)
 	∧ misuse(M).
@@ -172,7 +172,7 @@ event(M, harm, H, T1, X1) ⇐
 	∧ event(H, perform, M, T2, X4)
 	∧ {X1 = X2 + (1 - X2) * X3 * X4 * 0.25}.
 
-% 10 If performing M is not provable just assume that harm at T1 is the same as harm at T2
+% 10 If performing M is not provable assume that harm at T1 is the same as harm at T2
 event(M, harm, H, T1, X1) ⇐
 	source(harmState)
 	∧ human(H)
