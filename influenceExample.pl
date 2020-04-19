@@ -26,8 +26,8 @@
 
 % H1 is an atom or number
 % H2 is an atom or number
-% {T ∈ ℤ | 1 =< T =< 3} or an anonymous variable
-% {X ∈ ℝ | 0 =< X =< 1} or an anonymous variable
+% {T ∈ ℤ | 1 =< T =< 3}
+% {X ∈ ℝ | 0 =< X =< 1}
 
 
 % THEORY---------------------------------------------------------------------------------------------------------------
