@@ -21,4 +21,4 @@ For additional help, see [these](www.vimeo.com) videos.
 The files in this repository are available under the conditions of a GPL3 license (see the license file).
 
 ## Acknowledgements
-I want to extend a big thank you to the following people for patiently answering my questions while I learned logic programming: Alan Baljeu, Anne Ogborn, Carlo Capelli, Daniel Lyons, David Tonhofer, Eric Taucher, Fabrizio Riguzzi, false, Guy Coder, Håkan Kjellerstrand, Jan Wielemaker, lurker, Mostowski Collapse, Paul Brown, Paulo Moura, Peter Ludemann, and repeat.
+This work would not have been possible without the kind help of people in the logic programming community. I want to thank Alan Baljeu, Anne Ogborn, Carlo Capelli, Daniel Lyons, David Tonhofer, Eric Taucher, Fabrizio Riguzzi, false, Guy Coder, Håkan Kjellerstrand, Jan Wielemaker, lurker, Mostowski Collapse, Paul Brown, Paulo Moura, Peter Ludemann, and repeat.

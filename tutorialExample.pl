@@ -1,4 +1,4 @@
-﻿:-include('theoryToolbox.pl').
+﻿:-include('theoryToolbox.pl'). :-style_check(-discontiguous).
 
 human(h1).
 human(h2).
