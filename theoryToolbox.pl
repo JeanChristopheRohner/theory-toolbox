@@ -34,8 +34,8 @@ goal_expansion(A ∨ B, (A; B)).
 % collinsQuillianExample.pl
 % genealogyExample.pl
 % planningExample.pl
-% substanceAbuseExample.pl
-% substanceAbuseExample+.pl
+% substanceMisuseExample.pl
+% substanceMisuseExample+.pl
 
 provable(G, I, G):- provable0(G, I).
 
@@ -66,8 +66,8 @@ showProvable(G):- copy_term_nat(G, G1), numbervars(G1, 0, _, [attvar(bind)]), wr
 % emotionExample.pl
 % genealogyExample.pl
 % influenceExample.pl
-% substanceAbuseExample.pl
-% substanceAbuseExample+.pl
+% substanceMisuseExample.pl
+% substanceMisuseExample+.pl
 
 prove(true, _, true):- !.
 prove((G1, G2), I, (P1, P2)):- !, prove(G1, I, P1), prove(G2, I, P2).
@@ -101,7 +101,7 @@ showProof(P):- copy_term_nat(P, P1), numbervars(P1, 0, _, [attvar(bind)]), nl, w
 % emotionExample.pl
 % influenceExample.pl
 % planningExample.pl
-% substanceAbuseExample.pl
+% substanceMisuseExample.pl
 
 maxValue(Y, G, I):-
 	findall(
@@ -131,7 +131,7 @@ showMaxValue(G, I):-
 
 % Usage examples:
 % planningExample.pl
-% substanceAbuseExample.pl
+% substanceMisuseExample.pl
 
 minValue(Y, G, I):-
    	findall(
