@@ -17,6 +17,7 @@
 term_expansion(A ⇐ B, A:- B).
 goal_expansion(A ∧ B, (A, B)).
 goal_expansion(A ∨ B, (A; B)).
+goal_expansion(¬A, \+A).
 
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,8 +44,8 @@ provable0(true, _):- !.
 provable0((G1, G2), I):- !, provable0(G1, I), provable0(G2, I).
 provable0((G1; G2), I):- !, (provable0(G1, I); provable0(G2, I)).
 provable0(G, _):- G = {_}, !, call(G).
+provable0(G, I):- G = \+(G0), !, \+provable0(G0, I).
 provable0(G, _):- predicate_property(G, built_in), !, call(G).
-provable0(G, I):- G = ¬(G0), \+provable0(G0, I).
 provable0(G, I):- copy_term(I, I1), member(G, I1).
 provable0(H, I):- clause(H, Body), provable0(Body, I).
 
@@ -73,8 +74,8 @@ prove(true, _, true):- !.
 prove((G1, G2), I, (P1, P2)):- !, prove(G1, I, P1), prove(G2, I, P2).
 prove((G1; G2), I, (P1; P2)):- !, (prove(G1, I, P1); prove(G2, I, P2)).
 prove(G, _, P):- G = {_}, !, call(G), P = subproof(G, true).
+prove(G, I, P):- G = \+(G0), !, \+prove(G0, I, _), P = subproof(¬G0, true).
 prove(G, _, P):- predicate_property(G, built_in), !, call(G), P = subproof(G, true).
-prove(G, I, P):- G = ¬(G0), \+prove(G0, I, _), P = subproof(G, true).
 prove(G, I, P):- copy_term(I, I1), member(G, I1), P = subproof(G, true).
 prove(H, I, subproof(H, Subproof)):- clause(H, Body), prove(Body, I, Subproof).
 
