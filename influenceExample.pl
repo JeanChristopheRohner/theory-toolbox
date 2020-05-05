@@ -1,7 +1,4 @@
-﻿:-include('theoryToolbox.pl').
-
-
-% NOTES----------------------------------------------------------------------------------------------------------------
+﻿% NOTES----------------------------------------------------------------------------------------------------------------
 
 % A simple theory about the effects of smoking on cancer and the effects of social influence on smoking inspired 
 % by a model from the DTAI research group at KU Leuwen. The magnitude of the relation between (lung) cancer and 
@@ -16,6 +13,10 @@
 
 % https://dtai.cs.kuleuven.be/problog/tutorial/basic/05_smokers.html
 
+
+% =====================================================================================================================
+
+:-include('theoryToolbox.pl').
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 

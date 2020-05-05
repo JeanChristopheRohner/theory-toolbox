@@ -1,6 +1,4 @@
-﻿:-include('theoryToolbox.pl').
-
-% NOTES----------------------------------------------------------------------------------------------------------------
+﻿% NOTES----------------------------------------------------------------------------------------------------------------
 
 % The theory below is loosely based on the work of Ajzen (1991), Bandura(2004), Nutt et al (2007), Skinner (1953), 
 % and Walters and Rotgers (2011). Pleasure values and harm values for different substances were obtained by dividing 
@@ -12,7 +10,7 @@
 % immediate displeasure (i.e. not a reinforcer). For the sake of clarity the theory also uses a simple 
 % representation of the relation between substance misuse and physical harm: It does not increment harm as a function 
 % of the number of misuse episodes. Harm values should insted be interpreted as the harm that results from one misuse 
-% episode. The file substanceAbuseExample+.pl contains a more advanced state representation of harm.
+% episode. The file substanceAbuseExampleState.pl contains a more advanced state representation of harm.
 
 
 % SOURCES
@@ -30,6 +28,11 @@
 
 % Walters, S. T., & Rotgers, F. (Eds.). (2011). Treating substance abuse: Theory and technique. Guilford Press.
 
+
+% =====================================================================================================================
+
+
+:-include('theoryToolbox.pl').
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 

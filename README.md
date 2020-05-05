@@ -11,15 +11,12 @@ A collection of Prolog predicates for reasoning about scientific theories writte
 * Load (consult) your file from SWI Prolog.
 * The include directive
   * Enables the use of clp(r) predicates; see more information [here](https://www.swi-prolog.org/pldoc/man?section=clpqr).
-  * Enables the use of symbols from classic logic: `∧`, `∨`, `⇐`, `¬` (in theoryToolbox.pl these are defined as operators and `term_expansion/2` and `goal_expansion/2` are used to replace the first three logical symbols with standard Prolog operators).
-  * Enables the following Theory Toolbox predicates: `provable/3`, `prove/3`, `maxValue/3`, `minValue/3`, `incoherence/6` and `falsifiability/3` (for more information see the comments in theoryToolbox.pl.
+  * Enables the use of symbols from classic logic: `∧`, `∨`, `⇐`, `¬` (in theoryToolbox.pl these are defined as operators and `term_expansion/2` and `goal_expansion/2` are used to replace them with standard Prolog operators).
+  * Enables the following Theory Toolbox predicates: `provable/3`, `prove/3`, `maxValue/3`, `minValue/3`, `incoherence/6` and `falsifiability/3` (for more information see the comments in theoryToolbox.pl).
 * SWI Prolog can be run from a terminal or as a standalone application. Complementing the SWI Prolog installation with [Visual Studio Code](https://code.visualstudio.com/download) and the [VSC Prolog extension](https://marketplace.visualstudio.com/items?itemName=arthurwang.vsc-prolog) is very handy. Visual Studio Code has built-in GitHub support and it can be used to define user snippets (for logical or other symbols).
-
-## Help
-For additional help, see [these](www.vimeo.com) videos.
 
 ## Legal
 The files in this repository are available under the conditions of a GPL3 license (see the license file).
 
 ## Acknowledgements
-This work would not have been possible without the kind help of people in the logic programming community. I want to thank Alan Baljeu, Anne Ogborn, Carlo Capelli, Daniel Lyons, David Tonhofer, Eric Taucher, Fabrizio Riguzzi, @false, @Guy Coder, Håkan Kjellerstrand, Jan Wielemaker, @lurker, @Mostowski Collapse, Paul Brown, Paulo Moura, Peter Ludemann, and @repeat.
+I want to thank the following people for their kind help during the course of this project: Alan Baljeu, Anne Ogborn, Carlo Capelli, Daniel Lyons, David Tonhofer, Eric Taucher, Fabrizio Riguzzi, @false, @Guy Coder, Håkan Kjellerstrand, Jan Wielemaker, @lurker, Markus Triska, @Mostowski Collapse, Paul Brown, Paulo Moura, Peter Ludemann, and @repeat.

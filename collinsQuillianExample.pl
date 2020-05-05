@@ -1,7 +1,4 @@
-﻿:-include('theoryToolbox.pl').
-
-
-% NOTES----------------------------------------------------------------------------------------------------------------
+﻿% NOTES----------------------------------------------------------------------------------------------------------------
 
 % Recursive representation of Collins' and Quillian's (1969) ideas about how properties of subclasses
 % are deduced from superclass-subclass relations and superclass-property relations.
@@ -18,6 +15,10 @@
 % Collins, A. M. and Quillian, M. R. (1969). Retrieval time from semantic memory. 
 % Journal of Verbal Learning and Verbal Behavior, 8, 241–248.
 
+
+% =====================================================================================================================
+
+:-include('theoryToolbox.pl').
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 

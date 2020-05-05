@@ -1,7 +1,4 @@
-﻿:-include('theoryToolbox.pl').
-
-
-% NOTES----------------------------------------------------------------------------------------------------------------
+﻿% NOTES----------------------------------------------------------------------------------------------------------------
 
 % An appraisal theory of emotion loosely based on Lazarus (1991), Smith and Ellsworth (1985), and 
 % Smith and Lazarus (1993).
@@ -18,6 +15,10 @@
 % Smith, C. A., & Lazarus, R. S. (1993). Appraisal components, core relational themes, 
 % and the emotions. Cognition & Emotion, 7(3-4), 233-269.
 
+
+% =====================================================================================================================
+
+:-include('theoryToolbox.pl').
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 
@@ -39,7 +40,6 @@
 time(past).
 time(present).
 time(future).
-
 precedes(past, present).
 precedes(present, future).
 
@@ -54,7 +54,6 @@ event(H, value, autonomy, T, 0.5) ⇐ human(H) ∧ time(T).
 
 % CORE RELATIONS
 
-% 1 Anger
 event(H1, experience, anger, T1, X1) ⇐
 	human(H1)
 	∧ human(H2)
@@ -70,7 +69,6 @@ event(H1, experience, anger, T1, X1) ⇐
 	∧ event(H1, appraise, event(world, cause, E, T2, 1), T1, X7)
 	∧ {X1 = X2 * X3 * (1 - X4) * (1 - X5) * X6 * (1 - X7)}.
 
-% 2 Shame
 event(H1, experience, shame, T1, X1) ⇐
 	human(H1)
 	∧ human(H2)
@@ -86,7 +84,6 @@ event(H1, experience, shame, T1, X1) ⇐
 	∧ event(H1, appraise, event(world, cause, E, T2, 1), T1, X7)
 	∧ {X1 = X2 * X3 * (1 - X4) * X5 * (1 - X6) * (1 - X7)}.
 
-% 3 Fear
 event(H, experience, fear, T1, X1) ⇐
 	human(H)
 	∧ event(E)
@@ -97,7 +94,6 @@ event(H, experience, fear, T1, X1) ⇐
 	∧ event(H, appraise, event(E, congruent, G, T2, 1), T1, X4)
 	∧ {X1 = X2 * X3 * (1 - X4)}.
 
-% 4 Sadness
 event(H1, experience, sadness, T1, X1) ⇐
 	human(H1)
 	∧ human(H2)
@@ -113,7 +109,6 @@ event(H1, experience, sadness, T1, X1) ⇐
 	∧ event(H1, appraise, event(world, cause, E, T2, 1), T1, X7)
 	∧ {X1 = X2 * X3 * (1 - X4) * (1 - X5) * (1 - X6) * X7}.
 
-% 5 Happiness
 event(H, experience, happiness, T1, X1) ⇐
 	human(H)
 	∧ event(E)
