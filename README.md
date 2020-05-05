@@ -20,3 +20,5 @@ The files in this repository are available under the conditions of a GPL3 licens
 
 ## Acknowledgements
 I want to thank the following people for their kind help during the course of this project: Alan Baljeu, Anne Ogborn, Carlo Capelli, Daniel Lyons, David Tonhofer, Eric Taucher, Fabrizio Riguzzi, @false, @Guy Coder, Håkan Kjellerstrand, Jan Wielemaker, @lurker, Markus Triska, @Mostowski Collapse, Paul Brown, Paulo Moura, Peter Ludemann, and @repeat.
+
+The predicates in this toolbox were inspired by the code in Leon Sterling's and Ehud Shapiro's _The Art of Prolog_ (1994) and Markus Triska's [The Power of Prolog](https://www.metalevel.at/prolog) (2020).
