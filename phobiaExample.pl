@@ -6,12 +6,13 @@
 % SOURCES
 
 % American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (DSM-5®). 
-% American Psychiatric Pub.
+% American Psychiatric Publishers.
 
 
-% =====================================================================================================================
+% SETUP----------------------------------------------------------------------------------------------------------------
 
 :-include('theoryToolbox.pl').
+
 
 % INPUT----------------------------------------------------------------------------------------------------------------
 
