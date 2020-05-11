@@ -6,7 +6,7 @@
 % SOURCES
 
 % Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial Intelligence : A Modern Approach (3rd ed.). 
-% Upper Saddle River: Prentice Hall. 
+% Prentice Hall. 
 
 
 % SETUP----------------------------------------------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 % are deduced from superclass-subclass relations and superclass-property relations.
 
 % The theory below also formalizes the time it takes to make an inference (T) and the probability of the 
-% inference (X). Making an A isa C inference from A isa B and B isa C is harder; hence the 0.8 penalty for 
+% inference (X). Making an A isa C inference from A isa B and B isa C is harder; hence the 0.8 weight for 
 % such inferences.  The same goes for the probability of making an A has property P inference from A isa B 
 % and B has property P. The time to deduce a relation is linearly related to the number of links that have to 
 % be traversed (isa links or property links).

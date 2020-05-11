@@ -1,6 +1,6 @@
 ﻿% NOTES----------------------------------------------------------------------------------------------------------------
 
-% DSM5 definition of simple phobia.
+% Important parts of the DSM5® definition of simple phobia.
 
 
 % SOURCES

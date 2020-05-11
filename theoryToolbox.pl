@@ -4,6 +4,7 @@
 % Theory Toolbox 1.0 beta.
 % © Jean-Christophe Rohner 2020
 % This is experimental software. Use at your own risk.
+% See the LICENSE file for more information.
 
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,7 +37,7 @@ goal_expansion(¬A, \+A).
 % genealogyExample.pl
 % planningExample.pl
 % substanceMisuseExample.pl
-% substanceMisuseExample+.pl
+% substanceMisuseExampleState.pl
 
 provable(G, I, G):- provable0(G, I).
 
@@ -68,7 +69,7 @@ showProvable(G):- copy_term_nat(G, G1), numbervars(G1, 0, _, [attvar(bind)]), wr
 % genealogyExample.pl
 % influenceExample.pl
 % substanceMisuseExample.pl
-% substanceMisuseExample+.pl
+% substanceMisuseExampleState.pl
 
 prove(true, _, true):- !.
 prove((G1, G2), I, (P1, P2)):- !, prove(G1, I, P1), prove(G2, I, P2).

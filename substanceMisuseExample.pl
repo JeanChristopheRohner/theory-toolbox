@@ -24,7 +24,7 @@
 % Skinner, B. F. (1953). Science and human behavior: Simon and Schuster.
 
 % Bandura, A. (2004). Observational Learning. In J. H. Byrne (Ed.), Learning and Memory (2nd ed. ed., pp. 482-484). 
-% New York, NY: Macmillan Reference USA.
+% Macmillan Reference USA.
 
 % Walters, S. T., & Rotgers, F. (Eds.). (2011). Treating substance abuse: Theory and technique. Guilford Press.
 
