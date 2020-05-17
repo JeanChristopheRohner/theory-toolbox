@@ -13,7 +13,7 @@ After downloading SWI-Prolog and the Theory Toolbox repository do the following 
 4. At the prompt, next to ?-, type one of the queries followed by a period, such as `q3.`
 
 ## Proper Operation
-* To use the toolbox on your own theory, create a text file (UTF-8 with BOM encoding) and write `:-include('theoryToolbox.pl').` at the top of this file. Your file has to be in the same directory as theoryToolbox.pl (alternatively you can modify the include directory to point to another directory that contains theoryToolbox.pl).
+* To use the toolbox on your own theory, create a text file (UTF-8 with BOM encoding) and write the following code at the top of this file: `:-include('theoryToolbox.pl').` Your file has to be in the same directory as theoryToolbox.pl (alternatively you can modify the include directory to point to another directory that contains theoryToolbox.pl).
 * Load (consult) your file from SWI Prolog. Instructions for doing so can be found [here](https://www.swi-prolog.org/pldoc/man?section=quickstart).
 * The include directive
   - Enables the use of clp(r) predicates; see more information [here](https://www.swi-prolog.org/pldoc/man?section=clpqr).
