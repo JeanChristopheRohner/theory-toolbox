@@ -80,7 +80,7 @@ q1 ⇐	GOAL1 = event(S, V, O, T, X1)
 	]
 	∧ THRESHOLD = 0.1
 	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
-	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.
+	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD) ∧ fail.
 
 q2 ⇐	GOAL1 = event(S, V, O, T, X1)
 	∧ GOAL2 = event(S, V, O, T, X2)
@@ -93,4 +93,4 @@ q2 ⇐	GOAL1 = event(S, V, O, T, X1)
 	]
 	∧ THRESHOLD = 0.1
 	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
-	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) ∧ fail.
+	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD) ∧ fail.

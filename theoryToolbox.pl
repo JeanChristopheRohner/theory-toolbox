@@ -160,7 +160,7 @@ showMinValue(G, I):-
 % THRESHOLD should be a number (integer or real).
 % X1 and X2 are the variables that hold numbers in GOAL1 and GOAL2.
 
-% showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2). Print the results obtained from incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) to the console.
+% showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD). Print the results obtained from incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2) to the console.
 
 % Usage examples:
 % phobiaExample.pl
@@ -169,13 +169,8 @@ incoherence(I, G1, G2, T, X1, X2):-
 	provable0(G1, I),
 	provable0(G2, I),
 	{abs(X1 - X2) > T}, !.
-incoherence(I, G1, G2, T, X1, X2):-
-	provable0(G1, I),
-	provable0(G2, I),
-	{abs(X1 - X2) =< T}.
 
-showIncoherence(I, G1, G2, T, X1, X2):- 
-	{abs(X1 - X2) > T},
+showIncoherence(I, G1, G2, T):-
 	nl,
 	writeln('INCOHERENCE'), nl,
 	copy_term_nat(I, I1), numbervars(I1, 0, _, [attvar(bind)]),
@@ -190,18 +185,6 @@ showIncoherence(I, G1, G2, T, X1, X2):-
 	nl,
 	showProof0(P22, 0),
 	nl, nl.
-
-showIncoherence(I, G1, G2, T, X1, X2):- 
-	{abs(X1 - X2) =< T},
-	nl,
-	writeln('INCOHERENCE'), nl,
-	copy_term_nat(I, I1), numbervars(I1, 0, _, [attvar(bind)]),
-	writeln('Given inputs:'), maplist(writeln, I1), nl,
-	write('These goals are not incoherent at the threshold '), write(T), writeln(':'),
-	copy_term_nat(G1, G12), numbervars(G12, 0, _, [attvar(bind)]),
-	copy_term_nat(G2, G22), numbervars(G22, 0, _, [attvar(bind)]),
-	writeln(G12),
-	writeln(G22), nl.
 
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
