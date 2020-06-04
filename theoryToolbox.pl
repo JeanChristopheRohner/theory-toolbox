@@ -2,7 +2,7 @@
 % INFO
 
 % Theory Toolbox 1.0 beta.
-% © Jean-Christophe Rohner 2020
+% © XXXX 2020
 % This is experimental software. Use at your own risk.
 % See the LICENSE file for more information.
 
