@@ -9,12 +9,13 @@
 % American Psychiatric Publishers.
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % source(SO) 
 % human(H)
@@ -22,14 +23,13 @@
 % event(H, phobia, S, time, X)
 
 % SO = dsm5 ∨ SO = plausibleAssumption
-% H is an atom or number
-% S is an atom or number
+% H and S are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
-% CORE RELATIONS
+% MAIN CLAUSES
 
 % 1 "Marked fear or anxiety about a specific object or situation (e.g., flying, 
 % heights, animals, receiving an injection, seeing blood)." and "The fear, anxiety, or 

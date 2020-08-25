@@ -16,26 +16,24 @@
 % Journal of Verbal Learning and Verbal Behavior, 8, 241–248.
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % human(H)
 % event(H, represent, relation(A, isa, B), T, X) 	
 % event(H, represent, relation(B, hasProperty, P), T, X) 	
 
-% H is an atom or number
-% A is an atom or number
-% B is an atom or number
-% P is an atom or number
+% H, A, B and P are constants
 % {T ∈ ℤ}
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
 event(H, deduce, relation(A, isa, B), T1, X1) ⇐
 	human(H)

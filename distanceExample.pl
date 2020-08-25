@@ -3,27 +3,26 @@
 % A recursive theory about the transitivity of distance relations.
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % source(S)
 % human(H)
 % event(H, represent, relation(A, beyond, B), time, X)
 
-% H is an atom or number
-% A is an atom or number
-% B is an atom or number
+% H, A and B are constants
 % S = recursive ∨ S = nonrecursive
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
-% CORE RELATIONS
+% MAIN CLAUSES
 
 % 1 Base case
 event(H, deduce, relation(A, beyond, B), time, X1) ⇐

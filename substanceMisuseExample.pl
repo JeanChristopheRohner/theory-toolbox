@@ -29,12 +29,13 @@
 % Walters, S. T., & Rotgers, F. (Eds.). (2011). Treating substance abuse: Theory and technique. Guilford Press.
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % source(S)	
 % human(H)
@@ -42,14 +43,13 @@
 % exogenousEvent(_, _, _, _, X)
 
 % S = theoryOfPlannedBehavior ∨ S = operantLearning ∨ S = vicariousLearning ∨ S = harmBehavior
-% H is an atom or number
-% R is an atom or number
+% H and R are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
-% BACKGROUND ASSUMPTIONS
+% BACKGROUND CLAUSES
 
 misuse(useHeroin).
 misuse(useCocaine).
@@ -100,7 +100,7 @@ event(useEcstasy, cause, pleasure, T, 0.50) ⇐ time(T).
 event(useStreetMethadone, cause, pleasure, T, 0.60) ⇐ time(T).
 
 
-% CORE RELATIONS
+% MAIN CLAUSES
 
 % 1 Theory of planned behavior: Expectancy-value beliefs and attitudes
 event(H, represent, event(H, like, M, T1, 1), T1, X1) ⇐

@@ -16,27 +16,26 @@
 % and the emotions. Cognition & Emotion, 7(3-4), 233-269.
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % human(H1)
 % human(H2)
 % event(E)
 % event(H1, appraise, _, present, X)
 
-% H1 is an atom or number
-% H2 is an atom or number
-% E is an atom or number
+% H1, H2 and E are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
-% BACKGROUND ASSUMPTIONS
+% BACKGROUND CLAUSES
 
 time(past).
 time(present).
@@ -53,7 +52,7 @@ event(H, value, achievement, T, 0.6) ⇐ human(H) ∧ time(T).
 event(H, value, autonomy, T, 0.5) ⇐ human(H) ∧ time(T).
 
 
-% CORE RELATIONS
+% MAIN CLAUSES
 
 event(H1, experience, anger, T1, X1) ⇐
 	human(H1)

@@ -7,26 +7,24 @@
 % and if one has a container for the beverage).
 
 
-% SETUP----------------------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------------------------
+
 
 :-include('theoryToolbox.pl').
 
 
-% INPUT----------------------------------------------------------------------------------------------------------------
+% INPUT
 
 % human(H)
 % event(H, represent, transition(START, ACTION, GOAL), time, X)
 
-% H is an atom or number
-% START is an atom or number
-% ACTION is an atom or number
-% GOAL is an atom or number
+% H, START, ACTION and GOAL are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
-% THEORY---------------------------------------------------------------------------------------------------------------
+% THEORY
 
-% CORE RELATIONS
+% MAIN CLAUSES
 
 % 1 Base case
 event(H, deduce, plan(START, ACTIONS, GOAL), time, X1) ⇐
