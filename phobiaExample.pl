@@ -65,7 +65,8 @@ event(H, fear, O, time, X1) ⇐
 	∧ event(H, encounter, O, time, X3)
 	∧ {X1 = X2 * X3}.
 
-% 3 "The phobic object or situation is avoided or endured with intense fear or anxiety."
+% 3 "The phobic object or situation is avoided or endured with intense fear 
+% or anxiety."
 event(H, avoid, O, time, X1) ⇐
 	source(dsm5)
 	∧ human(H)
