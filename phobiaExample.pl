@@ -17,79 +17,100 @@
 
 % INPUT
 
-% source(SO) 
+% source(S) 
 % human(H)
-% situation(S)
-% event(H, phobia, S, time, X)
+% event(H, phobia, _, time, X)
 
-% SO = dsm5 ∨ SO = plausibleAssumption
+% S = dsm5 ∨ SO = plausibleAssumption
 % H and S are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
 % THEORY
 
+% BACKGROUND CLAUSES
+
+object(spiders).
+object(insects).
+object(dogs).
+object(heights).
+object(storms).
+object(water).
+object(needles).
+object(medicalProcedures).
+object(airplanes).
+object(elevators).
+object(enclosedSpaces).
+
+
 % MAIN CLAUSES
 
 % 1 "Marked fear or anxiety about a specific object or situation (e.g., flying, 
-% heights, animals, receiving an injection, seeing blood)." and "The fear, anxiety, or 
-% avoidance causes clinically significant distress or impairment in social, occupational, 
-% or other important areas of functioning."
-event(H, fear, S, time, X1) ⇐
+% heights, animals, receiving an injection, seeing blood)." and "The fear, anxiety,
+% or avoidance causes clinically significant distress or impairment in social, 
+% occupational, or other important areas of functioning."
+event(H, fear, O, time, X1) ⇐
 	source(dsm5)
 	∧ human(H)
-	∧ situation(S)
-	∧ event(H, phobia, S, time, X2)
+	∧ object(O)
+	∧ event(H, phobia, O, time, X2)
 	∧ {X1 = X2}.
 
 % 2 "The phobic object or situation almost always provokes immediate fear or anxiety."
-event(H, fear, S, time, X1) ⇐
+event(H, fear, O, time, X1) ⇐
 	source(dsm5)
 	∧ human(H)
-	∧ situation(S)
-	∧ event(H, phobia, S, time, X2)
-	∧ event(H, encounter, S, time, X3)
+	∧ object(O)
+	∧ event(H, phobia, O, time, X2)
+	∧ event(H, encounter, O, time, X3)
 	∧ {X1 = X2 * X3}.
 
 % 3 "The phobic object or situation is avoided or endured with intense fear or anxiety."
-event(H, avoid, S, time, X1) ⇐
+event(H, avoid, O, time, X1) ⇐
 	source(dsm5)
 	∧ human(H)
-	∧ situation(S)
-	∧ event(H, phobia, S, time, X2)
+	∧ object(O)
+	∧ event(H, phobia, O, time, X2)
 	∧ {X1 = X2}.
 
 % 4 Plausible assumption
-event(H, encounter, S, time, X1) ⇐
+event(H, encounter, O, time, X1) ⇐
 	source(plausibleAssumption)
 	∧ human(H)
-	∧ situation(S)
-	∧ event(H, avoid, S, time, X2)
+	∧ object(O)
+	∧ event(H, avoid, O, time, X2)
 	∧ {X1 = 1 - X2}.
 
 
 % EXAMPLE QUERIES------------------------------------------------------------------------------------------------------
 
-q1 ⇐	GOAL1 = event(S, V, O, T, X1)
-	∧ GOAL2 = event(S, V, O, T, X2)
+q1 ⇐	GOAL = event(somebody, _, _, time, _)
 	∧ INPUT = [
-		source(dsm5), 
-		human(somebody), 
-		situation(spiders), 
-		event(somebody, phobia, spiders, time, 1)
+		source(dsm5),
+		human(somebody),
+		event(somebody, phobia, heights, time, 0.8)
 	]
-	∧ THRESHOLD = 0.1
-	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
-	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD) ∧ fail.
+	∧ provable(GOAL, INPUT, RESULT)
+	∧ showProvable(RESULT).
 
 q2 ⇐	GOAL1 = event(S, V, O, T, X1)
 	∧ GOAL2 = event(S, V, O, T, X2)
 	∧ INPUT = [
 		source(dsm5), 
+		human(somebody),
+		event(somebody, phobia, _, time, 1)
+	]
+	∧ THRESHOLD = 0.1
+	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
+	∧ showIncoherence(INPUT, GOAL1, GOAL2, THRESHOLD) ∧ fail.
+
+q3 ⇐	GOAL1 = event(S, V, O, T, X1)
+	∧ GOAL2 = event(S, V, O, T, X2)
+	∧ INPUT = [
+		source(dsm5), 
 		source(plausibleAssumption), 
-		human(somebody), 
-		situation(spiders), 
-		event(somebody, phobia, spiders, time, 1)
+		human(somebody),
+		event(somebody, phobia, _, time, 1)
 	]
 	∧ THRESHOLD = 0.1
 	∧ incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2)
