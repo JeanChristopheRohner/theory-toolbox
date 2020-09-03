@@ -21,7 +21,7 @@
 % human(H)
 % event(H, phobia, _, time, X)
 
-% S = dsm5 ∨ SO = plausibleAssumption
+% S = dsm5 ∨ S = plausibleAssumption
 % H and S are constants
 % {X ∈ ℝ | 0 =< X =< 1}
 
