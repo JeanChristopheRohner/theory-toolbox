@@ -22,7 +22,7 @@
 % event(H, phobia, _, time, X)
 
 % S = dsm5 ∨ S = plausibleAssumption
-% H and S are constants
+% H is a constant
 % {X ∈ ℝ | 0 =< X =< 1}
 
 
