@@ -25,8 +25,8 @@ goal_expansion(¬A, \+A).
 % PROVABLE
 
 % provable(GOAL, INPUT, RESULT). Query if GOAL is provable given INPUT and return the answer in RESULT. 
-% GOAL should be a compound term where any argument can be a constant, a variable or an anonymous variable.
-% INPUT should be a list of zero or more compound terms.
+% GOAL should be an atom where any argument can be a constant, a variable or a function.
+% INPUT should be a list of zero or more atoms.
 % RESULT is the returned answer.
 
 % showProvable(RESULT). Prints the RESULT obtained from provable(GOAL, INPUT, RESULT) to the console.
@@ -57,8 +57,8 @@ showProvable(G):- copy_term_nat(G, G1), numbervars(G1, 0, _, [attvar(bind)]), wr
 % PROVE
 
 % prove(GOAL, INPUT, PROOF). Find a PROOF for GOAL given INPUT.
-% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable.
-% INPUT should be a list of zero or more compound terms.
+% GOAL should be an atom where any argument can be a constant, a variable or a function.
+% INPUT should be a list of zero or more atoms.
 % PROOF is the resulting proof.
 
 % showProof(PROOF). Prints the PROOF obtained from prove(GOAL, INPUT, PROOF) to the console.
@@ -94,8 +94,8 @@ showProof(P):- copy_term_nat(P, P1), numbervars(P1, 0, _, [attvar(bind)]), nl, w
 
 % maxValue(X, GOAL, INPUT). Find GOAL given INPUT such that the argument X in GOAL is as high as possible.
 % X is the returned maximum value
-% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable, and  where the argument X holds a numerical value.
-% INPUT should be a list of zero or more compound terms.
+% GOAL should be an atom where any argument can be a constant, a variable or a function, and  where the argument X holds a numerical value.
+% INPUT should be a list of zero or more atoms.
 
 % showMaxValue(GOAL, INPUT). Prints the results obtained from maxValue(X, GOAL, INPUT) to the console.
 
@@ -126,8 +126,8 @@ showMaxValue(G, I):-
 
 % minValue(X, GOAL, INPUT). Find GOAL given INPUT such that the argument X in GOAL is as low as possible.
 % X is the returned minimum value
-% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable, and where the argument X holds a numerical value.
-% INPUT should be a list of zero or more compound terms.
+% GOAL should be an atom where any argument can be a constant, a variable or a function, and  where the argument X holds a numerical value.
+% INPUT should be a list of zero or more atoms.
 
 % showMMinValue(GOAL, INPUT). Prints the results obtained from maxValue(X, GOAL, INPUT) to the console.
 
@@ -155,8 +155,8 @@ showMinValue(G, I):-
 % INCOHERENCE
 
 % incoherence(INPUT, GOAL1, GOAL2, THRESHOLD, X1, X2). Check if GOAL1 and GOAL2 differ with respect to their numerical values X1 and X2, more than THRESHOLD given INPUT.
-% INPUT should be a list of zero or more compounds.
-% GOAL1 and GOAL2 should be compound terms that each contain a variable which can be instantiated with a number; for example X1 and X2, respectively.
+% INPUT should be a list of zero or more atoms.
+% GOAL1 and GOAL2 should be atoms that each contain a variable which can be instantiated with a number; for example X1 and X2, respectively.
 % THRESHOLD should be a number (integer or real).
 % X1 and X2 are the variables that hold numbers in GOAL1 and GOAL2.
 
@@ -191,8 +191,8 @@ showIncoherence(I, G1, G2, T):-
 % FALSIFIABILITY
 
 % falsifiability(GOAL, INPUT, N). Count the number of unique predictions N with respect to GOAL given INPUT.
-% GOAL should be a compound term where any argument can be a constant, variable or anonymous variable.
-% INPUT should be a list of zero or more compound terms.
+% GOAL should be an atom where any argument can be a constant, a variable or a function.
+% INPUT should be a list of zero or more atoms.
 % N is the number of predictions
 
 % showFalsifiability(GOAL, INPUT, N). Prints the results of falsifiability(GOAL, INPUT, N) to the console.
