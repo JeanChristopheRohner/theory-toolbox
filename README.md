@@ -10,12 +10,12 @@ It is possible to run SWI-Prolog from Terminal on Mac or the command line in Win
 * Download and install [SWI Prolog](https://www.swi-prolog.org/Download.html).
 * Download and install [Visual Studio Code](https://code.visualstudio.com/download).
 * Install the VSC Prolog extension
-- Start Visual Studio Code and click the extensions symbol in the side bar on the far left (the symbol with four squares).
-- Search for the VSC Prolog extension and install it.
+  - Start Visual Studio Code and click the extensions symbol in the side bar on the far left (the symbol with four squares).
+  - Search for the VSC Prolog extension and install it.
 * Clone the Theory Toolbox repository
-- In Visual Studio Code, click the menu View and chose Command Palette... Type `git clone` and hit return when the `Git: Clone` command is selected.
-- When prompted paste in the URL for the Theory Toolbox repository: https://github.com/JeanChristopheRohner/theory-toolbox
-- Choose to open the repository when prompted.
+  - In Visual Studio Code, click the menu View and chose Command Palette... Type `git clone` and hit return when the `Git: Clone` command is selected.
+  - When prompted paste in the URL for the Theory Toolbox repository: https://github.com/JeanChristopheRohner/theory-toolbox
+  - Choose to open the repository when prompted.
 
 ## Try out Some Examples
 * In the folder structure to the left in Visual Studio Code double click an example, e.g. substanceMisuseExample.pl.
