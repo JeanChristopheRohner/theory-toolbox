@@ -8,6 +8,9 @@
 % American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (DSM-5®). 
 % American Psychiatric Publishers.
 
+% © Jean-Christophe Rohner 2020
+% Note: The theory below represents a hypothetical example
+
 
 % ---------------------------------------------------------------------------------------------------------------------
 

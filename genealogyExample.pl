@@ -2,6 +2,9 @@
 
 % Hello world example.
 
+% © Jean-Christophe Rohner 2020
+% Note: The theory below represents a hypothetical example
+
 
 % ---------------------------------------------------------------------------------------------------------------------
 

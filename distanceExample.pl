@@ -2,6 +2,9 @@
 
 % A recursive theory about the transitivity of distance relations.
 
+% © Jean-Christophe Rohner 2020
+% Note: The theory below represents a hypothetical example
+
 
 % ---------------------------------------------------------------------------------------------------------------------
 

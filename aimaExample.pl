@@ -6,7 +6,11 @@
 % SOURCES
 
 % Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial Intelligence : A Modern Approach (3rd ed.). 
-% Prentice Hall. 
+% Prentice Hall.
+
+
+% © Jean-Christophe Rohner 2020
+% Note: The theory below represents a hypothetical example
 
 
 % ---------------------------------------------------------------------------------------------------------------------

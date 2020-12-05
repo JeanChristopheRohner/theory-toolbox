@@ -13,6 +13,9 @@
 
 % https://dtai.cs.kuleuven.be/problog/tutorial/basic/05_smokers.html
 
+% © Jean-Christophe Rohner 2020
+% Note: The theory below represents a hypothetical example
+
 
 % ---------------------------------------------------------------------------------------------------------------------
 
