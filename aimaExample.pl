@@ -9,7 +9,7 @@
 % Prentice Hall.
 
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 

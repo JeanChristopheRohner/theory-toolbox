@@ -29,7 +29,7 @@
 % Walters, S. T., & Rotgers, F. (Eds.). (2011). Treating substance abuse: Theory and technique. Guilford Press.
 
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 

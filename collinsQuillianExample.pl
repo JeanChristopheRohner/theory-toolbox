@@ -15,7 +15,7 @@
 % Collins, A. M. and Quillian, M. R. (1969). Retrieval time from semantic memory. 
 % Journal of Verbal Learning and Verbal Behavior, 8, 241–248.
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 

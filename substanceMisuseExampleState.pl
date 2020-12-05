@@ -2,7 +2,7 @@
 
 % Exactly like substanceMisuse.pl except that physical harm is propagated across time frames.
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 

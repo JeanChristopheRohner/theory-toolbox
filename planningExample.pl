@@ -6,7 +6,7 @@
 % possible by having multiple arguments for each state (e.g. both if one has a beverage 
 % and if one has a container for the beverage).
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 

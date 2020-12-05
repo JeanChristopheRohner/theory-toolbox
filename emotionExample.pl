@@ -15,7 +15,7 @@
 % Smith, C. A., & Lazarus, R. S. (1993). Appraisal components, core relational themes, 
 % and the emotions. Cognition & Emotion, 7(3-4), 233-269.
 
-% © Jean-Christophe Rohner 2020
+% © Jean-Christophe Rohner 2019, 2020
 % Note: The theory below represents a hypothetical example
 
 
