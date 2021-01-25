@@ -2,7 +2,7 @@
 
 A collection of Prolog predicates for reasoning about scientific theories written in clausal form logic.
 
-## Note: This version is deprecated, go to the [webpage for theory-toolbox-2](https://jeanchristopherohner.github.io/theory-toolbox-2/) to find the latest version.
+### Note: This version is deprecated, go to the [webpage for theory-toolbox-2](https://jeanchristopherohner.github.io/theory-toolbox-2/) instead to find the latest version.
 
 
 ## Installation and Setup
